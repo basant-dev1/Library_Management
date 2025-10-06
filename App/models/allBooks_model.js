@@ -3,11 +3,11 @@ let mongoose = require("mongoose");
 let AvailableBooksSchema = mongoose.Schema({
         book:{
                 type : String,
-                require : true
+                required : true
         },
         auth:{
                 type : String,
-                require : true
+                required : true
         }
 });
 
