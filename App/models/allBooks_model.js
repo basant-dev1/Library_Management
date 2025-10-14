@@ -1,6 +1,10 @@
 let mongoose = require("mongoose");
 
 let AvailableBooksSchema = mongoose.Schema({
+        deptName : {
+                type : String,
+                require : true
+        },
         book:{
                 type : String,
                 required : true
