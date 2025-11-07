@@ -1,4 +1,9 @@
 let express = require("express")
+
+const cors = require("cors");
+app.use(cors());
+
+
 const mongoose = require("mongoose");
 const bookModel = require("./App/models/allBooks_model");
 const { InsertBook, BookList } = require("./App/controlles/bookDetails_Controller");
