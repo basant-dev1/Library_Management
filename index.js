@@ -1,7 +1,6 @@
 let express = require("express")
 
 const cors = require("cors");
-app.use(cors());
 
 
 const mongoose = require("mongoose");
@@ -11,6 +10,7 @@ const router = require("./App/routes/bookRoutes");
 require("dotenv").config();
 
 let app = express();
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.DBURL).then(()=>{
