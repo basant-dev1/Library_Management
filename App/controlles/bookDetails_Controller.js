@@ -1,4 +1,5 @@
-const mongoose = require ("mongoose")
+const mongoose = require ("mongoose");
+const bookModel = require("../models/allBooks_model");
 
 let InsertBook = async (req,res)=>{
     let {bookName,authName,deptName} = req.body;

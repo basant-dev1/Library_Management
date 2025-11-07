@@ -1,6 +1,6 @@
-let mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-let AvailableBooksSchema = mongoose.Schema({
+const AvailableBooksSchema = mongoose.Schema({
         
         book:{
                 type : String,
@@ -12,6 +12,6 @@ let AvailableBooksSchema = mongoose.Schema({
         }
 });
 
-let bookModel = mongoose.model("BooksDetails",AvailableBooksSchema)
+const bookModel = mongoose.model("BooksDetails",AvailableBooksSchema)
 
 module.exports = bookModel;
