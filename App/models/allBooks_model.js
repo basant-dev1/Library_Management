@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 
 let AvailableBooksSchema = mongoose.Schema({
-        deptName : {
+        dept : {
                 type : String,
                 require : true
         },

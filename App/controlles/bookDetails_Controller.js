@@ -1,10 +1,11 @@
 const mongoose = require ("mongoose")
 
 let InsertBook = async (req,res)=>{
-    let {bookName,authName} = req.body;
+    let {bookName,authName,deptName} = req.body;
         let books = new bookModel({
-                book : bookName,
-                auth : authName
+            dept : deptName,
+            book : bookName,
+            auth : authName
         });
 
         books.save().then(()=>{
