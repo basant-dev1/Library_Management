@@ -2,7 +2,7 @@ let express = require("express")
 const mongoose = require("mongoose");
 const bookModel = require("./App/models/allBooks_model");
 const { InsertBook, BookList } = require("./App/controlles/bookDetails_Controller");
-const { route } = require("./App/routes/bookRoutes");
+const router = require("./App/routes/bookRoutes");
 require("dotenv").config();
 
 let app = express();
@@ -16,4 +16,4 @@ mongoose.connect(process.env.DBURL).then(()=>{
 })
 
 
-app.use("/",Router);
+app.use("/",router);
