@@ -16,4 +16,4 @@ mongoose.connect(process.env.DBURL).then(()=>{
 })
 
 
-app.use("/",route);
+app.use("/",Router);

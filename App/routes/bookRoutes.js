@@ -6,4 +6,4 @@ const route = express.Router();
 route.get("/book-list",BookList);
 route.post("/Insert-Book",InsertBook);
 
-module.exports = route;
+module.exports = Router;
