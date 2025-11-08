@@ -4,7 +4,7 @@ const bookModel = require("../models/allBooks_model");
 let InsertBook = async (req,res)=>{
     let {bookName,authName,deptName} = req.body;
         let books = new bookModel({
-            dept : department,
+            dept : deptName,
             book : bookName,
             auth : authName
         });
