@@ -1,32 +1,24 @@
-let express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-const path = require("path");
-require("dotenv").config();
+let express = require("express")
 
+const cors = require("cors");
+
+
+const mongoose = require("mongoose");
+const bookModel = require("./App/models/allBooks_model");
+const { InsertBook, BookList } = require("./App/controlles/bookDetails_Controller");
 const router = require("./App/routes/bookRoutes");
+require("dotenv").config();
 
 let app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Serve uploaded images
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-// ✅ MongoDB Atlas Connection
-mongoose.connect(process.env.DBURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose.connect(process.env.DBURL).then(()=>{
+        console.log("Connected DB");
+        app.listen(process.env.PORT,()=>{
+                console.log("server is running on port " +process.env.PORT);
+        })
 })
-.then(() => {
-  console.log("✅ Connected to MongoDB Atlas");
-  app.listen(process.env.PORT, () => {
-    console.log(`🚀 Server running on port ${process.env.PORT}`);
-  });
-})
-.catch((err) => {
-  console.error("❌ MongoDB connection error:", err);
-});
 
-// ✅ Routes
-app.use("/", router);
+
+app.use("/",router);
