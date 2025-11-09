@@ -14,11 +14,11 @@ exports.signup = async (req, res) => {
 
     // Role-based restriction: if request contains createdBy, validate it.
     // createdBy is optional for self-signup (you may restrict as needed).
-    if (role === "librarian" && createdBy && createdBy !== "admin") {
-      return res.status(403).json({ message: "Only admin can create librarian." });
+    if (role === "Librarian" && createdBy && createdBy !== "admin") {
+      return res.status(403).json({ message: "Only admin can create Librarian." });
     }
-    if (role === "student" && createdBy && !["admin", "librarian"].includes(createdBy)) {
-      return res.status(403).json({ message: "Only admin or librarian can create student." });
+    if (role === "Student" && createdBy && !["admin", "Librarian"].includes(createdBy)) {
+      return res.status(403).json({ message: "Only admin or Librarian can create Student." });
     }
 
     const existing = await User.findOne({ email });
