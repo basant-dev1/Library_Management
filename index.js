@@ -22,3 +22,5 @@ mongoose.connect(process.env.DBURL).then(()=>{
 
 
 app.use("/",router);
+const authRoutes = require("./App/routes/authRoutes");
+app.use("/api/auth", authRoutes);
